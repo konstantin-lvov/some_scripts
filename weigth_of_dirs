@@ -1,0 +1,6 @@
+#!/bin/bash
+for k in $(ls $1) ; do
+  echo "$k :"
+  du -ch /$k/ 2> >(grep -v 'Permission denied') | grep total
+done
+
