@@ -1,7 +1,7 @@
 #!/bin/bash
 #it works better from root :), pass path in arg
 for k in $(ls $1) ; do
-  echo "$k :"
-  du -ch /$k/ 2> >(grep -v 'Permission denied') | grep total
+  du -ch /$k/ 2> >(grep -v 'Permission denied') | grep total | tr '\n' ' '
+  echo "in $k"
 done
 
